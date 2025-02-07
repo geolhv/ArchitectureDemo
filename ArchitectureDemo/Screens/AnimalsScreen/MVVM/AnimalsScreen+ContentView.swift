@@ -21,11 +21,19 @@ extension AnimalsScreen {
                                 characteristic: animal.characteristic.name,
                                 action: { onEvent(.didSelect(animal)) }
                             )
+                            .accessibilityIdentifierWithContext(AccessibilityId.card)
                         }
                         .padding()
                     }
                 case .failed(let error):
-                    ErrorView(error: error)
+                    ErrorView(error: error) {
+                        Button {
+                            onEvent(.didRetry)
+                        } label:{
+                            Text("Retry")
+                        }
+                        .accessibilityIdentifierWithContext(AccessibilityId.retryButton)
+                    }
                 }
             }
         }

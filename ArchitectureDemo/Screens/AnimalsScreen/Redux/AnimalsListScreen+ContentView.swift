@@ -25,7 +25,13 @@ extension AnimalsListScreen {
                         .padding()
                     }
                 case .failed(let error):
-                    ErrorView(error: error)
+                    ErrorView(error: error) {
+                        Button {
+                            onEvent(.didRetry)
+                        } label:{
+                            Text("Retry")
+                        }
+                    }
                 }
             }
         }

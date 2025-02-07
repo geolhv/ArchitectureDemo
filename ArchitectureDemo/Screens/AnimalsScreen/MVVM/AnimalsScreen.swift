@@ -1,9 +1,17 @@
 import SwiftUI
 
+extension AnimalsScreen {
+    enum AccessibilityId: String, AccessibilityIdentifiable {
+        case card = "card_view"
+        case retryButton = "retry_button"
+    }
+}
+
 struct AnimalsScreen: View {
     enum Event: Hashable {
         case didAppear
         case didSelect(Animal)
+        case didRetry
     }
 
     @StateObject private var viewModel: ViewModel

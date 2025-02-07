@@ -1,5 +1,12 @@
 import SwiftUI
 
+extension AnimalDetailScreen {
+    enum AccessibilityId: String, AccessibilityIdentifiable {
+        case image = "animal_image"
+        case name = "animal_name"
+    }
+}
+
 struct AnimalDetailScreen: View {
     let animal: Animal
 
@@ -12,7 +19,9 @@ struct AnimalDetailScreen: View {
             } placeholder: {
                 ProgressView()
             }
+            .accessibilityIdentifierWithContext(AccessibilityId.image)
             Text(animal.characteristic.name)
+                .accessibilityIdentifierWithContext(AccessibilityId.name)
             Spacer()
         }
         .padding()

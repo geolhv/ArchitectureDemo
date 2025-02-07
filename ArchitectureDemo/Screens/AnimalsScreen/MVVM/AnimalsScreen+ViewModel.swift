@@ -24,6 +24,8 @@ extension AnimalsScreen {
             case let .didSelect(animal):
                 print("Going to \(animal.name)")
                 onNavigation(animal)
+            case .didRetry:
+                await getAnimals()
             }
         }
 

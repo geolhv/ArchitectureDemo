@@ -9,6 +9,7 @@ extension AnimalsListScreen {
     enum Action: Hashable {
         case didAppear
         case didSelect(Animal)
+        case didRetry
     }
     
     struct Environment {
@@ -21,7 +22,7 @@ extension AnimalsListScreen {
         environment: Environment
     ) async {
         switch action {
-        case .didAppear:
+        case .didAppear, .didRetry:
             print("On Appeared")
             state.animals = .loading
             do {

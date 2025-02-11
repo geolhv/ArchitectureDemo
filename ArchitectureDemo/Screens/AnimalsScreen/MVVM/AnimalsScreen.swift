@@ -23,7 +23,7 @@ struct AnimalsScreen: View {
 
     var body: some View {
         ContentView(
-            state: viewModel.state,
+            animals: viewModel.state.animals,
             onEvent: { currentEvent = $0 }
         )
         .navigationTitle("Animals")

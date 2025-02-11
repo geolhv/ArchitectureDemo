@@ -7,14 +7,14 @@ final class AnimalsScreenViewModelTests: XCTestCase {
         let error = URLError(.badURL)
         let viewModel = sut(animals: .failure(error))
         await viewModel.handle(event: .didAppear)
-        XCTAssertEqual(viewModel.state, .failed(error))
+        XCTAssertEqual(viewModel.state.animals, .failed(error))
     }
     
     func test_didAppear_getAnimalsSucceed() async {
         let animals: [Animal] = Animal.fixture()
         let viewModel = sut(animals: .success(Animal.fixture()))
         await viewModel.handle(event: .didAppear)
-        XCTAssertEqual(viewModel.state, .loaded(animals))
+        XCTAssertEqual(viewModel.state.animals, .loaded(animals))
     }
     
     func test_didSelectAnimal() async {

@@ -24,7 +24,7 @@ extension AnimalsListScreen {
         switch action {
         case .didAppear, .didRetry:
             print("On Appeared")
-            state.animals = .loading
+            state.animals = .loading()
             do {
                 let animals = try await environment.usecase.get()
                 state.animals = .loaded(animals)

@@ -2,12 +2,12 @@ import SwiftUI
 
 extension AnimalsScreen {
     struct ContentView: View {
-        let state: LoadingState<[Animal]>
+        let animals: LoadingState<[Animal]>
         let onEvent: (Event) -> Void
         
         var body: some View {
             VStack {
-                switch state {
+                switch animals {
                 case .idle:
                     Color.clear
                 case .loading:
@@ -42,7 +42,7 @@ extension AnimalsScreen {
 
 #Preview {
     AnimalsScreen.ContentView(
-        state: .loaded(Animal.fixture()),
+        animals: .loaded(Animal.fixture()),
         onEvent: { _ in }
     )
 }

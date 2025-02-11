@@ -1,10 +1,13 @@
 import Foundation
 
 extension AnimalsScreen {
+    struct ViewState: Equatable {
+        var animals: LoadingState<[Animal]> = .idle
+    }
 
     @MainActor
     final class ViewModel: ObservableObject {
-        @Published private(set) var state: LoadingState<[Animal]> = .idle
+        @Published private(set) var state: ViewState = .init()
         private let usecase: AnimalsUseCase
         private let onNavigation: (Animal) -> Void
 
@@ -30,12 +33,12 @@ extension AnimalsScreen {
         }
 
         private func getAnimals() async {
-            state = .loading
+            state.animals = .loading()
             do {
                 let animals = try await usecase.get()
-                state = .loaded(animals)
+                state.animals = .loaded(animals)
             } catch {
-                state = .failed(error)
+                state.animals = .failed(error)
             }
         }
     }

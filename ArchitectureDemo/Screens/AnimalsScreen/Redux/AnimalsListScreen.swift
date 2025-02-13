@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AnimalsListScreen: View {
     @StateObject private var store: Store<State, Action, Environment>
-    @SwiftUI.State private var currentAction: Action? = .didAppear
+    @TaskID private var currentAction: Action? = .didAppear
     private let onNavigation: (Animal) -> Void
 
     init(
@@ -24,7 +24,7 @@ struct AnimalsListScreen: View {
         )
         .navigationTitle("Animals")
         .navigationBarTitleDisplayMode(.inline)
-        .task(event: $currentAction) { value in
+        .task(uniqueEvent: $currentAction) { value in
             await store.send(action: value)
         }
         .onChange(of: store.state.selectedAnimal) { _, animal in

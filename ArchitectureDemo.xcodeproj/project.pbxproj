@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C746D2FE2D84199400270F34 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = C746D2FD2D84199400270F34 /* Domain */; };
+		C746D3002D84199400270F34 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = C746D2FF2D84199400270F34 /* Utils */; };
+		C746D3022D8419AB00270F34 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = C746D3012D8419AB00270F34 /* Domain */; };
+		C746D3042D8419AB00270F34 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = C746D3032D8419AB00270F34 /* Utils */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C7F0704B2D48390000D426EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -17,13 +24,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7C5F3162D842A5C00162A60 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
+		C7C5F3172D842A5C00162A60 /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utils; path = Packages/Utils; sourceTree = "<group>"; };
 		C7F070392D4838FF00D426EA /* ArchitectureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitectureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F0704A2D48390000D426EA /* ArchitectureDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectureDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C70296F52D84223300743841 /* Exceptions for "ArchitectureDemo" folder in "ArchitectureDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/ArchitectureDemo.xctestplan,
+			);
+			target = C7F070382D4838FF00D426EA /* ArchitectureDemo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C7F0703B2D4838FF00D426EA /* ArchitectureDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C70296F52D84223300743841 /* Exceptions for "ArchitectureDemo" folder in "ArchitectureDemo" target */,
+			);
 			path = ArchitectureDemo;
 			sourceTree = "<group>";
 		};
@@ -39,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C746D3002D84199400270F34 /* Utils in Frameworks */,
+				C746D2FE2D84199400270F34 /* Domain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C746D3042D8419AB00270F34 /* Utils in Frameworks */,
+				C746D3022D8419AB00270F34 /* Domain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +81,8 @@
 		C7F070302D4838FF00D426EA = {
 			isa = PBXGroup;
 			children = (
+				C7C5F3162D842A5C00162A60 /* Domain */,
+				C7C5F3172D842A5C00162A60 /* Utils */,
 				C7F0703B2D4838FF00D426EA /* ArchitectureDemo */,
 				C7F0704D2D48390000D426EA /* ArchitectureDemoTests */,
 				C7F0703A2D4838FF00D426EA /* Products */,
@@ -90,6 +118,8 @@
 			);
 			name = ArchitectureDemo;
 			packageProductDependencies = (
+				C746D2FD2D84199400270F34 /* Domain */,
+				C746D2FF2D84199400270F34 /* Utils */,
 			);
 			productName = ArchitectureDemo;
 			productReference = C7F070392D4838FF00D426EA /* ArchitectureDemo.app */;
@@ -113,6 +143,8 @@
 			);
 			name = ArchitectureDemoTests;
 			packageProductDependencies = (
+				C746D3012D8419AB00270F34 /* Domain */,
+				C746D3032D8419AB00270F34 /* Utils */,
 			);
 			productName = ArchitectureDemoTests;
 			productReference = C7F0704A2D48390000D426EA /* ArchitectureDemoTests.xctest */;
@@ -340,6 +372,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.ArchitectureDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -378,6 +411,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.ArchitectureDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -400,6 +434,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.ArchitectureDemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -423,6 +458,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.ArchitectureDemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -467,6 +503,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C746D2FD2D84199400270F34 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		C746D2FF2D84199400270F34 /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utils;
+		};
+		C746D3012D8419AB00270F34 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		C746D3032D8419AB00270F34 /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C7F070312D4838FF00D426EA /* Project object */;
 }

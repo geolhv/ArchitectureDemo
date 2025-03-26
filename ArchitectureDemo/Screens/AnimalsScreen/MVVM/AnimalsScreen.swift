@@ -1,4 +1,7 @@
 import SwiftUI
+import Domain
+import Utils
+import Foundation
 
 extension AnimalsScreen {
     enum AccessibilityId: String, AccessibilityIdentifiable {
@@ -9,13 +12,14 @@ extension AnimalsScreen {
 
 struct AnimalsScreen: View {
     enum Event: Hashable {
+        case didFirstAppear
         case didAppear
         case didSelect(Animal)
         case didRetry
     }
 
     @StateObject private var viewModel: ViewModel
-    @TaskID private var currentEvent: Event? = .didAppear
+    @TaskID private var currentEvent: Event = .didFirstAppear
     
     init(viewModel: ViewModel) {
         self._viewModel = .init(wrappedValue: viewModel)
@@ -26,9 +30,13 @@ struct AnimalsScreen: View {
             animals: viewModel.state.animals,
             onEvent: { currentEvent = $0 }
         )
-        .navigationTitle("Animals")
+        .navigationTitle("screen.title")
         .navigationBarTitleDisplayMode(.inline)
-        .task(uniqueEvent: $currentEvent) { value in
+        .task(
+            uniqueEvent: $currentEvent,
+            onFirstEvent: .didFirstAppear,
+            onAppearEvent: .didAppear
+        ) { value in
             await viewModel.handle(event: value)
         }
     }

@@ -1,8 +1,10 @@
 import SwiftUI
+import Domain
+import Utils
 
 struct AnimalsListScreen: View {
     @StateObject private var store: Store<State, Action, Environment>
-    @TaskID private var currentAction: Action? = .didAppear
+    @TaskID private var currentAction: Action = .didAppear
     private let onNavigation: (Animal) -> Void
 
     init(

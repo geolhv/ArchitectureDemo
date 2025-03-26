@@ -1,4 +1,4 @@
-enum LoadingState<Value: Equatable> {
+public enum LoadingState<Value: Equatable> {
     case idle
     case loading(previous: Value? = nil)
     case loaded(Value)
@@ -21,7 +21,7 @@ extension LoadingState: Equatable {
         return true
     }
 
-    static func == (lhs: LoadingState, rhs: LoadingState) -> Bool {
+    public static func == (lhs: LoadingState, rhs: LoadingState) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle):
             return true

@@ -1,4 +1,6 @@
 import SwiftUI
+import Domain
+import Utils
 
 extension AnimalsListScreen {
     struct ContentView: View {

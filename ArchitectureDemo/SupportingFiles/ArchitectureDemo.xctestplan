@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "DC1D7794-B68B-46C7-AC83-67567F367ACE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ArchitectureDemo.xcodeproj",
+        "identifier" : "C7F070492D48390000D426EA",
+        "name" : "ArchitectureDemoTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Utils",
+        "identifier" : "UtilsTests",
+        "name" : "UtilsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

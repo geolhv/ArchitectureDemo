@@ -1,4 +1,4 @@
-extension Animal {
+public extension Animal {
     static func fixture() -> Self {
         .init(
             name: "Goldfinch Perched ",

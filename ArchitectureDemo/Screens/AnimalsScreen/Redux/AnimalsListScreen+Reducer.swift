@@ -1,4 +1,6 @@
 import Foundation
+import Domain
+import Utils
 
 extension AnimalsListScreen {
     struct State {

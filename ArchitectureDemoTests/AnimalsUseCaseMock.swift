@@ -1,4 +1,5 @@
 @testable import ArchitectureDemo
+import Domain
 import Foundation
 
 class AnimalsUseCaseMock: AnimalsUseCase {

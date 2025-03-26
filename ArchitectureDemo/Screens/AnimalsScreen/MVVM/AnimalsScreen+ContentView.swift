@@ -1,4 +1,6 @@
 import SwiftUI
+import Domain
+import Utils
 
 extension AnimalsScreen {
     struct ContentView: View {
@@ -30,7 +32,7 @@ extension AnimalsScreen {
                         Button {
                             onEvent(.didRetry)
                         } label:{
-                            Text("Retry")
+                            Text("Retry &#8594;")
                         }
                         .accessibilityIdentifierWithContext(AccessibilityId.retryButton)
                     }
@@ -42,7 +44,7 @@ extension AnimalsScreen {
 
 #Preview {
     AnimalsScreen.ContentView(
-        animals: .loaded(Animal.fixture()),
+        animals: .failed(URLError.init(.unknown)),//.loaded(Animal.fixture()),
         onEvent: { _ in }
     )
 }

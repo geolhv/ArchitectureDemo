@@ -1,4 +1,5 @@
 import SwiftUI
+import Domain
 
 extension AnimalDetailScreen {
     enum AccessibilityId: String, AccessibilityIdentifiable {

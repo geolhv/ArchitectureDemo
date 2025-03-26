@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ArchitectureDemo
+
+  Created by George Quentin on 10/03/2025.
+  
+*/
+
+"screen.title" = "Animals";
+"retry.button" = "Retry &#8594";

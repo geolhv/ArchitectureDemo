@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "1688A5CC-B67C-48D9-96EF-FCBE35849F90",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AnimalsTests",
+        "name" : "AnimalsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1620"
+   LastUpgradeVersion = "1640"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7F070382D4838FF00D426EA"
-               BuildableName = "ArchitectureDemo.app"
-               BlueprintName = "ArchitectureDemo"
-               ReferencedContainer = "container:ArchitectureDemo.xcodeproj">
+               BlueprintIdentifier = "Utils"
+               BuildableName = "Utils"
+               BlueprintName = "Utils"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,20 +30,19 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:ArchitectureDemo/Testplans/ArchitectureDemo.xctestplan"
+            reference = "container:../ArchitectureDemo/Testplans/Utils.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7F070492D48390000D426EA"
-               BuildableName = "ArchitectureDemoTests.xctest"
-               BlueprintName = "ArchitectureDemoTests"
-               ReferencedContainer = "container:ArchitectureDemo.xcodeproj">
+               BlueprintIdentifier = "UtilsTests"
+               BuildableName = "UtilsTests"
+               BlueprintName = "UtilsTests"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,16 +57,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7F070382D4838FF00D426EA"
-            BuildableName = "ArchitectureDemo.app"
-            BlueprintName = "ArchitectureDemo"
-            ReferencedContainer = "container:ArchitectureDemo.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,16 +64,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7F070382D4838FF00D426EA"
-            BuildableName = "ArchitectureDemo.app"
-            BlueprintName = "ArchitectureDemo"
-            ReferencedContainer = "container:ArchitectureDemo.xcodeproj">
+            BlueprintIdentifier = "Utils"
+            BuildableName = "Utils"
+            BlueprintName = "Utils"
+            ReferencedContainer = "container:">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

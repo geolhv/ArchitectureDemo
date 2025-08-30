@@ -1,0 +1,3 @@
+struct AnimalsResponse: Decodable {
+    
+}

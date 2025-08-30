@@ -1,5 +1,5 @@
 import SwiftUI
-import Domain
+import Animals
 
 @main
 struct ArchitectureDemoApp: App {
@@ -14,9 +14,6 @@ struct ArchitectureDemoApp: App {
                         path.append(animal)
                     }
                 )
-////                AnimalsListScreen { animal in
-////                    path.append(animal)
-////                }
                 .navigationDestination(for: Animal.self) {
                     AnimalDetailScreen(animal: $0)
                 }

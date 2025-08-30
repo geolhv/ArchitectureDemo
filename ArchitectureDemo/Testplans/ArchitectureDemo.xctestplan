@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "DC1D7794-B68B-46C7-AC83-67567F367ACE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Features\/Animals",
+        "identifier" : "AnimalsTests",
+        "name" : "AnimalsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Utils",
+        "identifier" : "UtilsTests",
+        "name" : "UtilsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

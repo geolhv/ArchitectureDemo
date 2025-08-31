@@ -1,6 +1,7 @@
+import AnimalsDomain
+import Foundation
 import SwiftUI
 import Utils
-import Foundation
 
 public struct AnimalsScreen: View {
     enum Event: Hashable & Sendable {

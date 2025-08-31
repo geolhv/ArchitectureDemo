@@ -1,3 +1,4 @@
+import AnimalsDomain
 import SwiftUI
 
 public struct AnimalDetailScreen: View {

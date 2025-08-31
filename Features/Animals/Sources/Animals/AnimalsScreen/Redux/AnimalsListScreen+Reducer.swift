@@ -1,3 +1,5 @@
+import AnimalsDomain
+import Factory
 import Foundation
 import Utils
 
@@ -14,7 +16,7 @@ extension AnimalsListScreen {
     }
     
     struct Environment: Sendable {
-        let usecase: AnimalsUseCase
+        @Injected(\.animalsUsecase) var animalsUsecase
     }
 
     static func reducer(
@@ -27,7 +29,7 @@ extension AnimalsListScreen {
             print("On Appeared")
             state.animals = .loading()
             do {
-                let animals = try await environment.usecase.get()
+                let animals = try await environment.animalsUsecase.get(name: "c")
                 state.animals = .loaded(animals)
             } catch {
                 state.animals = .failed(error)

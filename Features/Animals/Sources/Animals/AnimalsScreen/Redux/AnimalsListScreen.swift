@@ -1,3 +1,4 @@
+import AnimalsDomain
 import SwiftUI
 import Utils
 
@@ -7,13 +8,12 @@ struct AnimalsListScreen: View {
     private let onNavigation: (Animal) -> Void
 
     init(
-        usecase: AnimalsUseCase = AnimalsUseCaseImpl(),
         onNavigation: @escaping (Animal) -> Void
     ) {
         self._store = .init(wrappedValue: .init(
             initialState: .init(),
             reducer: Self.reducer(state:action:environment:),
-            environment: .init(usecase: usecase))
+            environment: .init())
         )
         self.onNavigation = onNavigation
     }

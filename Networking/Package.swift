@@ -12,7 +12,15 @@ let package = Package(
             targets: ["Networking"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/hmlongco/Factory.git", exact: "2.5.3")
+    ],
     targets: [
-        .target(name: "Networking")
+        .target(
+            name: "Networking",
+            dependencies: [
+                .product(name: "Factory", package: "Factory")
+            ]
+        )
     ]
 )

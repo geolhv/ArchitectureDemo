@@ -1,3 +1,32 @@
+import Foundation
+
+public struct Animal: Hashable, Sendable, Identifiable {
+    public var id: String { "\(name)\(characteristic)" }
+    public let name: String
+    public let imageUrl: String
+    public let characteristic: Characteristic
+    
+    public init(name: String, imageUrl: String, characteristic: Characteristic) {
+        self.name = name
+        self.imageUrl = imageUrl
+        self.characteristic = characteristic
+    }
+}
+
+public extension Animal {
+    enum Characteristic: String, Sendable {
+        case amphibian
+        case fish
+        case mammal
+        case bird
+        case reptile
+        
+        public var name: String {
+            rawValue.capitalized
+        }
+    }
+}
+
 public extension Animal {
     static func fixture() -> Self {
         .init(

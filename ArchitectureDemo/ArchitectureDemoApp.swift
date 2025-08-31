@@ -14,8 +14,11 @@ struct ArchitectureDemoApp: App {
                         path.append(animal)
                     }
                 )
-                .navigationDestination(for: Animal.self) {
-                    AnimalDetailScreen(animal: $0)
+                .navigationDestination(for: AnimalsNavigationDestination.self) {
+                    switch $0 {
+                    case .detail(let animal):
+                        AnimalDetailScreen(animal: animal)
+                    }
                 }
             }
         }

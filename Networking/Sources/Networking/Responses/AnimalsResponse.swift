@@ -1,3 +1,0 @@
-struct AnimalsResponse: Decodable {
-    
-}

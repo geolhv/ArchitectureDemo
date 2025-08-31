@@ -1,3 +1,5 @@
+import AnimalsDomain
+import Factory
 import Foundation
 import Utils
 
@@ -12,16 +14,14 @@ public extension AnimalsScreen {
 
     final class ViewModel: ObservableObject {
         @Published private(set) var state: ViewState = .init()
+        @Injected(\.animalsUsecase) private var animalsUsecase
         private let tracker: Tracker
-        private let usecase: AnimalsUseCase
-        private let onNavigation: (Animal) -> Void
+        private let onNavigation: (AnimalsNavigationDestination) -> Void
 
         public init(
-            usecase: AnimalsUseCase = AnimalsUseCaseImpl(),
             tracker: Tracker = .init(),
-            onNavigation: @escaping (Animal) -> Void
+            onNavigation: @escaping (AnimalsNavigationDestination) -> Void
         ) {
-            self.usecase = usecase
             self.tracker = tracker
             self.onNavigation = onNavigation
         }
@@ -38,7 +38,7 @@ public extension AnimalsScreen {
                 await getAnimals()
             case let .didSelect(animal):
                 print("Going to \(animal.name)")
-                onNavigation(animal)
+                onNavigation(.detail(animal))
             case .didRetry:
                 await getAnimals()
             }
@@ -48,7 +48,7 @@ public extension AnimalsScreen {
         private func getAnimals() async {
             state.animals = .loading()
             do {
-                let animals = try await usecase.get()
+                let animals = try await animalsUsecase.get(name: "c")
                 state.animals = .loaded(animals)
             } catch {
                 state.animals = .failed(error)

@@ -1,15 +1,16 @@
+import AnimalsDomain
 import DesignSystem
 import SwiftUI
 import Utils
 
-extension AnimalsListScreen {
+extension AnimalsScreen {
     struct ContentView: View {
-        let state: LoadingState<[Animal]>
-        let onEvent: (Action) -> Void
-
+        let animals: LoadingState<[Animal]>
+        let onEvent: (Event) -> Void
+        
         var body: some View {
             VStack {
-                switch state {
+                switch animals {
                 case .idle:
                     Color.clear
                 case .loading:
@@ -32,7 +33,7 @@ extension AnimalsListScreen {
                         Button {
                             onEvent(.didRetry)
                         } label:{
-                            Text("Retry")
+                            Text("Retry &#8594;")
                         }
                     }
                 }
@@ -42,8 +43,8 @@ extension AnimalsListScreen {
 }
 
 #Preview {
-    AnimalsListScreen.ContentView(
-        state: .loaded(Animal.fixture()),
+    AnimalsScreen.ContentView(
+        animals: .failed(URLError.init(.unknown)),//.loaded(Animal.fixture()),
         onEvent: { _ in }
     )
 }
